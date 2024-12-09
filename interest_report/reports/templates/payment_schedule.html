@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Schedule Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Payment Schedule Details</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    {% for header in headers %}
+                        <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                    <tr>
+                        <td>{{ row.S_No }}</td>
+                        <td>{{ row.Flat_No }}</td>
+                        <td>{{ row.Customer_Name }}</td>
+                        <td>{{ row.Description }}</td>
+                        <td>{{ row.DueDate }}</td>
+                        <td>{{row.DueAmount}}</td>
+                        <td>{{ row.ReceivedDate }}</td>
+                        <td>{{ row.ReceiptType }}</td>
+                        <td>{{ row.AmountReceived }}</td>
+                        <td>{{ row.No_of_Days_Delay }}</td>
+                        <td>{{ row.Percentage }}</td>
+                        <td>{{ row.Interest }}</td>
+                        <td>{{ row.GST }}</td>
+                        <td>{{ row.TotalInterest }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
